@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<DoctorSampleApp.Models.DoctorTable>
+
+@{ ViewData["Title"] = "Index";
+}
+
+<h1 style="color:forestgreen">Doctors List</h1>
+<hr />
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {<div class="card col-md-5 ,-2">
+                <div class="row">
+                    <div class="col-md-5">                        
+                    <img style="width:150px; height:150px" class="card-img" src="@item.DoctorImage" />                   
+                    </div>                    
+                                     
+                    <div class="col-md-8 card m-2">
+                        <h3 class="card-title"> @item.DoctorName</h3>    
+                        <hr/>
+                                       
+                        <p class="card-text">Doctor Department: @item.DoctorDept</p>   
+                        
+                        <p class="card-text">DoctorQualification: @item.DoctorQualification</p>
+
+                        <p class="card-text">Doctor Fees: @item.DoctorFees</p>                      
+                        <p>                           
+                        <a asp-action="Edit" asp-route-id="@item.DoctorId" class="btn btn-info">Edit</a>               
+                        </p>                       
+                        <p>                            
+                        <a asp-action="Delete" asp-route-id="@item.DoctorId" class="btn btn-info" style="align-content:flex-start">delete</a>                       
+                        </p>
+
+                    </div>                
+                </div>            
+            </div>}    
+    </div>
+</div>
+

@@ -1,0 +1,51 @@
+﻿@model DoctorSampleApp.Models.DoctorTable
+@{
+    ViewData["Title"] = "AddNew";
+}
+
+
+
+<h1 style="color:forestgreen">Add New Doctor</h1>
+
+
+
+<div class="row">
+
+    <div style="padding-top:20px" class="col-md-7 card">
+        <form asp-action="AddNew" asp-method="POST">
+
+            <div>
+                <p>Doctor Name <input asp-for="@Model.DoctorName" placeholder="Enter Doctor Name" /></p>
+
+            </div>
+            <div>
+                <p>
+                    Doctor Department  <input asp-for="@Model.DoctorDept" placeholder="Enter Doctor Department" />
+                </p>
+
+            </div>
+
+
+
+            <div>
+                <p>Doctor Fees  <input asp-for="@Model.DoctorFees" placeholder="Enter Doctor Fees" /></p>
+
+            </div>
+            <div>
+                <p>Doctor Qualification  <input asp-for="@Model.DoctorQualification" placeholder="Enter Doctor Qualification" /></p>
+
+            </div>
+            <div>
+                <p>Upload Doctor Image  <input asp-for="@Model.DoctorImage" /></p>
+
+            </div>
+            <button type="submit" class="btn btn-info">Submit</button>
+            <br />
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+has context menu
